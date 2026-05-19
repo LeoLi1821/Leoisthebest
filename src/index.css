@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a5f;
+  --color-primary-light: #2d5a8a;
+  --color-secondary: #64748b;
+  --color-accent: #3b82f6;
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #0f172a;
+  --color-text-light: #1e293b;
+  --color-text-dark: #f1f5f9;
+  --color-card-light: #f8fafc;
+  --color-card-dark: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-slate-900 text-slate-100;
+}
+
+* {
+  @apply box-border;
+}
+
+::selection {
+  @apply bg-blue-500/30;
+}
