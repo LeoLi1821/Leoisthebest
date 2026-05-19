@@ -409,7 +409,7 @@ function Hero() {
           >
             <div className="w-48 h-48 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="/证件照2026.jpg" 
+                src="/Leoisthebest/证件照2026.jpg" 
                 alt="李翱 Leo" 
                 className="w-full h-full object-cover"
               />
