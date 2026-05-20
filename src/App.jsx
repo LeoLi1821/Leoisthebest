@@ -5,7 +5,6 @@ import { useRef } from 'react'
 const personalInfo = {
   name: '李翱',
   nameEn: 'Leo',
-  title: '数据驱动 / 内容表达',
   phone: '18138705503',
   email: 'liaoleo1821@qq.com',
   politicalStatus: '中共党员',
@@ -18,11 +17,11 @@ const personalInfo = {
 }
 
 const aboutMe = {
-  description: '一个把"卷"变成艺术的选手——本科双学位专业第一，研究生继续霸榜。别人写论文秃头，我写报告顺带发个专栏。擅长用数据讲故事，用内容打动人心。本质上，我就是一个热爱和数据打交道、也热爱写东西的人。',
+  description: '以实力立身，以才情筑己。本硕学业持续领跑，兼具数据洞察与文字创作能力。善用数据叙事，以内容传情，钟情数理逻辑，亦热爱笔墨山河。',
   highlights: [
-    '数据敏感：68个经营指标随手拈来，搭建模型是我的日常',
+    '数据敏感：专注于HR数据指标梳理，搭建数据模型帮助全国HRBP洞察',
     '内容手感：30+原创文案，单篇5k+阅读是基操',
-    '协调能力：跨部门、跨项目，交付率100%是底线',
+    '协调能力：打通各个部门，成功落地全国性员工沟通平台"小鹿听你说"',
     '文字功底：政策研究、课题报告、公众号运营全能选手'
   ]
 }
@@ -32,7 +31,7 @@ const educationData = [
     school: '中国农业大学',
     major: '图书情报专硕',
     period: '2023.09 - 2025.06',
-    degree: '985/211/双一流',
+    degree: '硕士 | 985/211/双一流',
     rank: '2/17',
     scholarship: '校级二等奖学金2次',
     honors: '优秀中共党员、全国优秀荐读官',
@@ -52,35 +51,202 @@ const educationData = [
   }
 ]
 
-const workData = {
-  company: '瑞幸咖啡',
-  title: 'HRBP主管（数据运营方向）',
-  period: '2024.08 - 2026.01',
-  achievements: [
-    { title: '平台AI优化', desc: '全权负责员工反馈平台全周期运营，完成3400条用户建议闭环；落地AI智能分类、OA线上流转，大幅提升协同效率' },
-    { title: '数据模型搭建', desc: '独立搭建2套核心业务数据模型，梳理68个经营核心指标；设计自动化表单&数据仪表盘，实现数据标准化可视化' },
-    { title: '跨项目落地', desc: '承接人才储备、门店升级等重点项目，统筹4场线上培训，项目交付率100%' }
-  ]
+const workData = [
+  {
+    company: '罗德公共关系顾问有限公司',
+    title: 'AAE（助理客户主任）',
+    period: '2026.03 - 2026.05',
+    tag: '',
+    achievements: [
+      { title: '品牌文案撰写', desc: '服务阿斯顿·马丁豪华汽车品牌，结合高端用户画像拆解传播需求，独立撰写全渠道品牌文案；复盘传播数据持续优化内容调性，统一品牌对外宣传口径', projectId: 'ruderfinn-copywriting' },
+      { title: '舆情数据分析', desc: '定期复盘舆情趋势、输出数据洞察报告，识别潜在口碑风险，为品牌传播策略调整提供支撑', projectId: 'ruderfinn-sentiment' }
+    ]
+  },
+  {
+    company: '瑞幸咖啡',
+    title: 'HRBP主管（数据运营方向）',
+    period: '2024.08 - 2026.01',
+    tag: '实习转正',
+    achievements: [
+      { title: '小鹿听你说平台AI优化项目', desc: '全权负责员工反馈平台全周期运营，完成3400条用户建议闭环；落地AI智能分类、OA线上流转，大幅提升协同效率', projectId: 'ai-platform' },
+      { title: '全国HRBP数据模型搭建', desc: '独立搭建2套核心业务数据模型，梳理68个经营核心指标；设计自动化表单&数据仪表盘，实现数据标准化可视化', projectId: 'data-model' },
+      { title: '跨部门项目落地', desc: '承接人才储备、门店管理能力升级等重点项目，统筹4场线上培训，项目交付率100%', projectId: 'cross-dept' }
+    ]
+  }
+]
+
+const projectDetails = {
+  'ruderfinn-copywriting': {
+    title: '品牌文案撰写 — 阿斯顿·马丁',
+    sections: [
+      { label: '背景', text: '服务阿斯顿·马丁豪华汽车品牌，结合高端用户画像拆解传播需求，负责全渠道品牌文案产出', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '拆解高端用户画像与传播需求，制定品牌文案策略',
+        '独立撰写全渠道品牌文案，统一品牌对外宣传口径',
+        '复盘传播数据，持续优化内容调性'
+      ]},
+      { label: '工作成果', text: '建立品牌文案标准化输出流程，统一对外宣传口径，有效提升品牌传播一致性', type: 'result', images: ['/Leoisthebest/罗德-配图1.png'] }
+    ]
+  },
+  'ruderfinn-sentiment': {
+    title: '舆情数据分析 — 阿斯顿·马丁',
+    sections: [
+      { label: '背景', text: '负责阿斯顿·马丁品牌舆情监测与数据分析，为品牌传播策略调整提供数据支撑', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '定期复盘舆情趋势，监测品牌口碑动态',
+        '输出数据洞察报告，识别潜在口碑风险',
+        '基于数据为品牌传播策略调整提供建议'
+      ]},
+      { label: '工作成果', text: '建立舆情数据监测体系，有效识别潜在口碑风险，为品牌传播决策提供专业数据支撑', type: 'result', images: ['/Leoisthebest/罗德-配图2.png'] }
+    ]
+  },
+  'ai-platform': {
+    title: '小鹿听你说平台AI优化项目',
+    sections: [
+      { text: 'AI前端收集建议', image: '/Leoisthebest/ai-frontend.jpg' },
+      { text: 'AI中台分类', image: '/Leoisthebest/ai-middleware.jpg' },
+      { text: 'AI自动建议流转', image: '/Leoisthebest/ai-auto-flow.png' }
+    ]
+  },
+  'data-model': {
+    title: '全国HRBP数据模型搭建',
+    sections: [
+      { text: '基于全国HR常用的数据维度，梳理对应数据指标', image: '/Leoisthebest/data-metrics.png' },
+      { text: '归纳数据指标模型，进行需求提报与初步报告应用', image: '/Leoisthebest/data-application.png' }
+    ]
+  },
+  'cross-dept': {
+    title: '跨部门项目落地',
+    sections: [
+      { text: '承接人才储备、门店管理能力升级等重点项目', images: ['/Leoisthebest/cross-dept1.png', '/Leoisthebest/cross-dept2.png'] }
+    ]
+  },
+  'intern-elsevier': {
+    title: '励德爱思唯尔信息技术（北京）有限公司',
+    sections: [
+      { label: '背景', text: '负责学术类新媒体全渠道运营，对标行业账号优化内容策略，以数据驱动提升品牌传播效果。', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '拆解同行学术新媒体选题、内容形式与传播路径，对标复盘迭代运营策略',
+        '运维公众号/小红书/微博，整合翻译国际学术资讯，原创策划文案',
+        '监控阅读、转发、活跃用户等KPI，输出数据周报，动态调整选题与发布节奏'
+      ]},
+      { label: '工作成果', text: '产出30+篇原创文案，单篇平均阅读5k+，形成竞品分析—内容创作—数据复盘完整闭环，有效提升品牌全域传播影响力', type: 'result', image: '/Leoisthebest/elsevier.png' }
+    ]
+  },
+  'intern-academy': {
+    title: '北京市农林科学院数据科学与农业经济研究所',
+    sections: [
+      { label: '背景', text: '参与《数字化促进城乡基本公共服务均等化》课题研究，完成政策梳理、文本建模与课题报告撰写，输出专业发展研判与落地建议', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        { text: '系统梳理156份国家、省级政策文件，采用政策文本编码完成归类拆分、维度拆解与逻辑建模', images: ['/Leoisthebest/academy-text1.png', '/Leoisthebest/academy-text2.png'] },
+        '整合行业业态数据与政策导向，独立完成整篇课题研究报告撰写'
+      ]},
+      { label: '工作成果', text: '输出城乡公共服务数字化发展专业研判结论，形成可落地优化建议，为课题研究提供完整理论与数据支撑', type: 'result', image: '/Leoisthebest/academy-conclusion.png' }
+    ]
+  },
+  'intern-hill': {
+    title: '伟达（中国）公共关系顾问有限公司',
+    sections: [
+      { label: '背景', text: '服务施耐德电气、建发集团等品牌客户，负责公关稿件创作、新品营销策划及全渠道品牌传播数据复盘工作', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '为施耐德电气撰写10+份专业公关新闻稿，分发搜狐、网易等十余家媒体平台，单篇稿件阅读量达1w+',
+        '参与新品营销方案策划，调研竞品传播渠道与内容调性，独立完成方案初稿及PPT制作',
+        '复盘建发集团全渠道传播数据，分析线下广告、SEO、媒体通稿投放效果，输出专业复盘PPT并向客户汇报'
+      ]},
+      { label: '工作成果', text: '产出多篇高传播度公关稿件，策划的营销方案被客户正式采纳落地；通过多维度数据复盘沉淀传播方法论，为品牌营销决策提供专业依据', type: 'result', image: '/Leoisthebest/hill-knowlton.png' }
+    ]
+  },
+  'intern-nandu': {
+    title: '广州市南都周刊传媒股份有限公司',
+    sections: [
+      { label: '背景', text: '负责社会热点选题采写、公众号栏目运营与社群渠道搭建，产出优质原创内容，提升媒体平台传播影响力', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '跟进考公、社会热点等事件，完成选题采访与新闻稿件撰写，多平台发布上线',
+        '统筹运营媒笔记公众号栏目，搭建公众号联动社群渠道',
+        '策划并推送13篇媒体行业经验专栏笔记，常态化稳定内容更新'
+      ]},
+      { label: '工作成果', text: '原创稿件在南都周刊全平台累计收获100w+总阅读量，专栏单篇稳定3k+阅读；搭建内容+社群运营闭环，有效沉淀用户、提升栏目品牌影响力', type: 'result', images: ['/Leoisthebest/nandu1.png', '/Leoisthebest/nandu2.png'] }
+    ]
+  },
+  'research-library-survey': {
+    title: '高校图书馆数字资源利用行为调研',
+    sections: [
+      { label: '背景', text: '针对高校图书馆数字资源使用效率低下的问题，带领团队进行系统性调研分析与优化', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '调研国内外12所高校图书馆数字化服务模式，完成SWOT竞品分析',
+        '设计问卷并访谈200+师生用户，挖掘核心需求',
+        '推动图书馆新增资源采购，落地外文教材阅读专栏'
+      ]},
+      { label: '工作成果', text: '形成2万字调研报告，获图书馆管理层正式采纳', type: 'result', images: ['/Leoisthebest/资源调研-配图1.png', '/Leoisthebest/资源调研-配图2.png', '/Leoisthebest/资源调研-配图3.png'] }
+    ]
+  },
+  'research-library-data': {
+    title: '高校图书馆读者资源利用数据可视化与分析',
+    sections: [
+      { label: '背景', text: '对图书馆40万条读者借阅数据进行清洗、分析与可视化呈现，挖掘用户行为模式', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '使用Python Pandas处理缺失值、异常值，规范化数据结构',
+        '基于Tableau/Excel构建12个数据看板，展示借阅趋势、热门资源等',
+        '识别高频读者群体，挖掘阅读偏好，输出用户行为分析报告'
+      ]},
+      { label: '工作成果', text: '调研报告被图书馆正式采用，用于指导采购决策', type: 'result', images: ['/Leoisthebest/图书馆数据-配图1.png', '/Leoisthebest/图书馆数据-配图2.png', '/Leoisthebest/图书馆数据-配图3.png', '/Leoisthebest/图书馆数据-配图4.png'] }
+    ]
+  },
+  'research-policy': {
+    title: '"双一流"背景下高等教育分类政策演进课题研究',
+    sections: [
+      { label: '背景', text: '参与研究中国双一流高校政策的演变历程与发展趋势，完成核心章节撰写', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '梳理2015-2023年政策文件、学术论文共计500+篇',
+        '运用Python进行关键词提取与语义网络分析',
+        '独立撰写"学科建设成效评估"核心章节，约8000字'
+      ]},
+      { label: '工作成果', text: '课题成果提交至教育部相关研究机构参考', type: 'result', images: ['/Leoisthebest/高校分类-配图.png', '/Leoisthebest/高校分类-配图1.png'] }
+    ]
+  }
 }
 
 const internshipData = [
   {
-    company: '励德爱思唯尔',
+    company: '励德爱思唯尔信息技术（北京）有限公司',
     title: '市场部新媒体实习生',
     period: '2024.03 - 2024.07',
+    projectId: 'intern-elsevier',
     achievements: [
-      '竞品拆解内容策略，运营公众号/小红书/微博',
-      '撰写30+原创文案，单篇平均阅读5k+',
-      '跟踪KPI输出数据周报'
+      { title: '竞品拆解内容策略', desc: '拆解同行学术新媒体选题、内容形式与传播路径，对标复盘迭代运营策略' },
+      { title: '全渠道内容运营', desc: '运维公众号/小红书/微博，整合翻译国际学术资讯，原创策划文案' },
+      { title: '数据驱动运营', desc: '监控阅读、转发、活跃用户等KPI，输出数据周报，动态调整选题与发布节奏' }
     ]
   },
   {
-    company: '北京市农林科学院',
+    company: '北京市农林科学院数据科学与农业经济研究所',
     title: '政策研究实习生',
     period: '2023.12 - 2024.03',
+    projectId: 'intern-academy',
     achievements: [
-      '梳理156份政策文件，政策文本编码建模',
-      '独立撰写课题研究报告，输出城乡公共服务数字化优化建议'
+      { title: '政策文本编码建模', desc: '系统梳理156份国家、省级政策文件，采用政策文本编码完成归类拆分、维度拆解与逻辑建模' },
+      { title: '课题研究报告撰写', desc: '整合行业业态数据与政策导向，独立完成整篇课题研究报告撰写' }
+    ]
+  },
+  {
+    company: '伟达（中国）公共关系顾问有限公司',
+    title: '公关实习生',
+    period: '2022.12 - 2023.03',
+    projectId: 'intern-hill',
+    achievements: [
+      { title: '公关稿件创作与分发', desc: '为施耐德电气撰写10+份专业公关新闻稿，分发搜狐、网易等十余家媒体，单篇阅读量达1w+' },
+      { title: '新品营销方案策划', desc: '调研竞品传播渠道与内容调性，独立完成方案初稿及PPT制作，方案被客户正式采纳落地' },
+      { title: '全渠道传播数据复盘', desc: '复盘建发集团线下广告、SEO、媒体通稿等传播效果，输出专业复盘PPT并向客户汇报' }
+    ]
+  },
+  {
+    company: '广州市南都周刊传媒股份有限公司',
+    title: '运营组（深度训练营）',
+    period: '2021.04 - 2022.04',
+    projectId: 'intern-nandu',
+    achievements: [
+      { title: '热点选题采写', desc: '跟进考公、社会热点等事件选题采访与稿件撰写，多平台累计斩获100w+总阅读量' },
+      { title: '公众号栏目运营', desc: '统筹运营媒笔记公众号栏目，搭建公众号联动社群渠道，策划推送13篇行业经验专栏笔记，单篇稳定3k+' }
     ]
   }
 ]
@@ -91,44 +257,29 @@ const researchData = [
     role: '组长',
     period: '2024.03 - 2024.09',
     description: '针对高校图书馆数字资源使用效率低下的问题，带领团队进行系统性调研分析与优化。',
-    achievements: [
-      'SWOT竞品分析：调研国内外12所高校图书馆数字化服务模式',
-      '定性定量用户调研：设计问卷并访谈200+师生用户，挖掘核心需求',
-      '落地外文教材阅读专栏：推动图书馆新增资源采购，设立专门阅读区',
-      '形成2万字调研报告，获图书馆管理层采纳'
-    ]
+    projectId: 'research-library-survey'
   },
   {
-    title: '图书馆40w+数据清洗与可视化',
+    title: '高校图书馆读者资源利用数据可视化与分析',
     role: '组员',
     period: '2024.01 - 2024.06',
-    description: '对图书馆40万条读者借阅数据进行清洗、分析与可视化呈现。',
-    achievements: [
-      'Python Pandas数据清洗：处理缺失值、异常值，规范化数据结构',
-      'Tableau/Excel可视化：构建12个数据看板，展示借阅趋势、热门资源等',
-      '用户行为分析报告：识别高频读者群体，挖掘阅读偏好',
-      '调研报告被图书馆正式采用，用于指导采购决策'
-    ]
+    description: '对图书馆40万条读者借阅数据进行清洗、分析与可视化呈现，挖掘用户行为模式。',
+    projectId: 'research-library-data'
   },
   {
-    title: '双一流政策演进课题研究',
+    title: '"双一流"背景下高等教育分类政策演进课题研究',
     role: '组员',
     period: '2023.10 - 2024.03',
-    description: '参与研究中国双一流高校政策的演变历程与发展趋势。',
-    achievements: [
-      '文献数据整理：梳理2015-2023年政策文件、学术论文共计500+篇',
-      '词频文本分析：运用Python进行关键词提取与语义网络分析',
-      '独立撰写核心章节：负责"学科建设成效评估"部分，约8000字',
-      '课题成果提交至教育部相关研究机构参考'
-    ]
+    description: '参与研究中国双一流高校政策的演变历程与发展趋势，完成核心章节撰写。',
+    projectId: 'research-policy'
   }
 ]
 
 const skillsData = {
   language: [
-    { name: '英语四级', level: 554 },
-    { name: '英语六级', level: 477 },
-    { name: '粤语母语', level: 100 }
+    { name: '英语四级', level: 554, icon: '📝' },
+    { name: '英语六级', level: 477, icon: '📝' },
+    { name: '粤语母语', level: 100, icon: '🗣️' }
   ],
   dataTools: ['Python', 'SPSS', 'Excel', 'Tableau', 'Claude Code', 'Trae Vibe Coding'],
   designTools: ['Midjourney AI生图', '剪映AI', 'PS', 'Canva', '秀米', '剪映', 'PR']
@@ -138,14 +289,16 @@ const honorsData = [
   '校级二等奖学金（5次）',
   '优秀中共党员',
   '全国优秀荐读官',
-  '专业排名Top 5%（双学位）'
+  '专业排名Top 5%（双学位）',
+  '省级挑战杯铜奖',
+  '省级电商三创赛二等奖'
 ]
 
 const navItems = [
   { id: 'hero', label: '首页' },
   { id: 'about', label: '关于我' },
   { id: 'education', label: '教育经历' },
-  { id: 'work', label: '工作经历' },
+  { id: 'work', label: '正式工作经历' },
   { id: 'internship', label: '实习经历' },
   { id: 'research', label: '科研项目' },
   { id: 'skills', label: '专业技能' },
@@ -171,57 +324,74 @@ function Section({ id, children, className = '' }) {
   )
 }
 
-function TimelineCard({ data, isWork = false, isEducation = false }) {
+function TimelineCard({ data, isWork = false, isEducation = false, onProjectClick }) {
   return (
-    <div className="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700">
-      <div className="absolute -left-[9px] top-0 w-4 h-4 bg-slate-300 dark:bg-slate-600 rounded-full" />
-      <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 mb-6">
+    <div className="relative pl-8 border-l-2 border-ink-muted/20">
+      <div className="absolute -left-[9px] top-0 w-4 h-4 bg-royal rounded-full" />
+      <div className="bg-white rounded-lg p-6 mb-6 border border-ink-muted/10">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <h3 className="text-xl font-semibold text-slate-800 dark:text-white">
+          <h3 className="text-xl font-semibold text-ink">
             {isWork ? data.company : data.school}
           </h3>
           {isEducation && (
-            <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded">
+            <span className="px-2 py-1 bg-royal-pale text-royal-dark text-xs rounded">
               {data.degree}
             </span>
           )}
+          {isWork && data.tag && (
+            <span className="px-2 py-1 bg-royal-pale text-royal-dark text-xs rounded">
+              {data.tag}
+            </span>
+          )}
         </div>
-        <p className="text-slate-600 dark:text-slate-300 mb-1">
+        <p className="text-ink-light mb-1">
           {isWork ? data.title : data.major}
         </p>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">{data.period}</p>
+        <p className="text-sm text-ink-muted mb-3">{data.period}</p>
         
         {isEducation && data.rank && (
           <p className="text-sm mb-2">
-            <span className="font-semibold text-blue-600 dark:text-blue-400">专业排名: </span>
-            <span className="font-bold text-blue-600 dark:text-blue-400">{data.rank}</span>
+            <span className="font-semibold text-royal">专业排名: </span>
+            <span className="font-bold text-royal">{data.rank}</span>
           </p>
         )}
         
         {data.scholarship && (
-          <p className="text-sm text-slate-600 dark:text-slate-300 mb-1">
+          <p className="text-sm text-ink-light mb-1">
             <span className="font-medium">🏆 </span>{data.scholarship}
           </p>
         )}
         
         {data.honors && (
-          <p className="text-sm text-slate-600 dark:text-slate-300 mb-1">
+          <p className="text-sm text-ink-light mb-1">
             <span className="font-medium">⭐ </span>{data.honors}
           </p>
         )}
         
         {data.role && (
-          <p className="text-sm text-slate-600 dark:text-slate-300">
+          <p className="text-sm text-ink-light">
             <span className="font-medium">📋 </span>{data.role}：{data.description}
           </p>
         )}
         
         {isWork && data.achievements && (
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-4 space-y-4">
             {data.achievements.map((item, idx) => (
-              <li key={idx} className="text-sm text-slate-600 dark:text-slate-300">
-                <span className="font-semibold text-slate-800 dark:text-white">• {item.title}: </span>
-                {item.desc}
+              <li key={idx} className="text-sm text-ink-light">
+                {item.projectId ? (
+                  <button
+                    onClick={() => onProjectClick && onProjectClick(item.projectId)}
+                    className="group inline-flex items-center gap-2 px-3 py-1.5 -ml-3 rounded-lg text-royal font-semibold hover:bg-royal-pale transition-all duration-200"
+                  >
+                    <span>{item.title}</span>
+                    <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </button>
+                ) : (
+                  <span className="font-semibold text-ink">{item.title}</span>
+                )}
+                <span className="ml-1">— {item.desc}</span>
               </li>
             ))}
           </ul>
@@ -231,34 +401,52 @@ function TimelineCard({ data, isWork = false, isEducation = false }) {
   )
 }
 
-function SkillBar({ name, level }) {
+function SkillBar({ name, level, icon }) {
   return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{name}</span>
-        <span className="text-sm text-slate-500 dark:text-slate-400">{level}</span>
+    <div className="flex items-center gap-3 p-3 bg-royal-pale/30 rounded-xl">
+      <span className="text-xl flex-shrink-0">{icon}</span>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center justify-between mb-1.5">
+          <span className="text-sm font-medium text-ink">{name}</span>
+          <span className="text-sm font-bold text-royal">{level}</span>
+        </div>
+        <div className="h-1.5 bg-ink-muted/10 rounded-full overflow-hidden">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: `${Math.min(level, 100)}%` }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="h-full bg-gradient-to-r from-royal to-royal-light rounded-full"
+          />
+        </div>
       </div>
-      <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${Math.min(level, 100)}%` }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="h-full bg-gradient-to-r from-blue-500 to-blue-600"
-        />
+    </div>
+  )
+}
+
+function LanguageCard({ name, level, icon }) {
+  return (
+    <div className="flex items-center gap-3 p-3.5 bg-royal-pale/30 rounded-xl group hover:bg-royal-pale/50 transition-colors duration-200">
+      <span className="text-xl flex-shrink-0">{icon}</span>
+      <div className="flex-1 min-w-0">
+        <span className="text-sm font-medium text-ink">{name}</span>
       </div>
+      {level !== 100 && <span className="text-2xl font-bold text-royal">{level}</span>}
     </div>
   )
 }
 
 function SkillTag({ children }) {
   return (
-    <span className="inline-block px-3 py-1.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm rounded-full mr-2 mb-2">
+    <motion.span
+      whileHover={{ scale: 1.05, y: -2 }}
+      className="inline-flex items-center px-3.5 py-2 bg-white text-ink-light text-sm rounded-xl mr-2 mb-2.5 border border-ink-muted/10 shadow-sm hover:shadow-md hover:border-royal/20 transition-all duration-200 cursor-default"
+    >
       {children}
-    </span>
+    </motion.span>
   )
 }
 
-function Navbar({ darkMode, setDarkMode }) {
+function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -283,54 +471,37 @@ function Navbar({ darkMode, setDarkMode }) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-ink-muted/10' : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <span className="text-lg font-bold text-slate-800 dark:text-white">Leo</span>
+          <span className="text-lg font-bold text-royal tracking-wide">Leo</span>
           
           <div className="hidden md:flex items-center space-x-1">
             {navItems.slice(0, -1).map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="px-3 py-2 text-sm text-ink-light hover:text-royal transition-colors"
               >
                 {item.label}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-            >
-              {darkMode ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-ink-light"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
-            </button>
-
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-slate-600 dark:text-slate-300"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
+            </svg>
+          </button>
         </div>
 
         {mobileMenuOpen && (
@@ -343,7 +514,7 @@ function Navbar({ darkMode, setDarkMode }) {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+                className="block w-full text-left px-3 py-2 text-ink-light hover:text-royal"
               >
                 {item.label}
               </button>
@@ -366,35 +537,40 @@ function Hero() {
             transition={{ duration: 0.8 }}
             className="flex-1 text-center md:text-left"
           >
-            <p className="text-slate-500 dark:text-slate-400 mb-4">{personalInfo.politicalStatus} | {personalInfo.graduation}毕业</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-2">
-              {personalInfo.name} <span className="text-blue-600 dark:text-blue-400">({personalInfo.nameEn})</span>
+            <p className="text-ink-muted mb-4">{personalInfo.politicalStatus} | {personalInfo.graduation}毕业</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-ink mb-6">
+              {personalInfo.name} <span className="text-royal">({personalInfo.nameEn})</span>
             </h1>
-            <p className="text-xl text-blue-600 dark:text-blue-400 font-medium mb-6">{personalInfo.title}</p>
             
             <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
               {personalInfo.strengths.map((strength, idx) => (
-                <span key={idx} className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm">
+                <span key={idx} className="px-4 py-2 bg-white text-ink-light rounded-full text-sm border border-ink-muted/15">
                   {strength}
                 </span>
               ))}
             </div>
 
-            <div className="space-y-2 text-slate-600 dark:text-slate-300 mb-8">
-              <p>📚 {personalInfo.school1} · {personalInfo.major1}</p>
-              <p>📚 {personalInfo.school2} · {personalInfo.major2}</p>
+            <div className="space-y-3 text-ink-light mb-8">
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <img src="/Leoisthebest/cau-logo.svg" alt="中国农业大学" className="w-8 h-8 flex-shrink-0" />
+                <span>{personalInfo.school1} · {personalInfo.major1}</span>
+              </div>
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <img src="/Leoisthebest/hlju-logo.png" alt="黑龙江大学" className="w-8 h-8 flex-shrink-0" />
+                <span>{personalInfo.school2} · {personalInfo.major2}</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
                 href={`tel:${personalInfo.phone}`}
-                className="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-6 py-2.5 bg-royal text-white rounded-lg hover:bg-royal-dark transition-colors"
               >
                 📞 电话联系
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="px-6 py-2.5 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-500 transition-colors"
+                className="px-6 py-2.5 border-2 border-ink-muted/30 text-ink-light rounded-lg hover:border-royal hover:text-royal transition-colors"
               >
                 ✉️ 发送邮件
               </a>
@@ -407,7 +583,7 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex-1 flex justify-center"
           >
-            <div className="w-48 h-48 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl">
+            <div className="w-48 h-48 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl ring-2 ring-royal/20">
               <img 
                 src="/Leoisthebest/证件照2026.jpg" 
                 alt="李翱 Leo" 
@@ -423,11 +599,11 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" className="bg-slate-50 dark:bg-slate-800/50">
+    <Section id="about">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">关于我</h2>
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-sm">
-          <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">关于我</h2>
+        <div className="bg-white rounded-xl p-8 shadow-sm border border-ink-muted/10">
+          <p className="text-lg text-ink-light leading-relaxed mb-8">
             {aboutMe.description}
           </p>
           
@@ -438,10 +614,10 @@ function About() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-700 rounded-lg"
+                className="flex items-start gap-3 p-4 bg-royal-pale/50 rounded-lg border-l-3 border-royal"
               >
-                <span className="text-blue-500 text-xl">✦</span>
-                <span className="text-slate-700 dark:text-slate-300">{item}</span>
+                <span className="text-royal text-xl">✦</span>
+                <span className="text-ink-light">{item}</span>
               </motion.div>
             ))}
           </div>
@@ -455,7 +631,7 @@ function Education() {
   return (
     <Section id="education">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">教育经历</h2>
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">教育经历</h2>
         <div className="space-y-0">
           {educationData.map((item, idx) => (
             <TimelineCard key={idx} data={item} isEducation />
@@ -466,36 +642,177 @@ function Education() {
   )
 }
 
-function Work() {
+function ProjectModal({ projectId, onClose }) {
+  const project = projectDetails[projectId]
+  if (!project) return null
+
+  const hasTypedSections = project.sections.some(s => s.type)
+
+  const getLabelBadge = (type, label) => {
+    if (type === 'bg') return (
+      <span className="inline-flex items-center px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-bold tracking-wide">{label || '背景'}</span>
+    )
+    if (type === 'result') return (
+      <span className="inline-flex items-center px-3 py-1 rounded-full bg-royal-dark/10 text-royal-dark text-xs font-bold tracking-wide">{label || '工作成果'}</span>
+    )
+    return (
+      <span className="inline-flex items-center px-3 py-1 rounded-full bg-royal-light/20 text-royal text-xs font-bold tracking-wide">{label || '执行'}</span>
+    )
+  }
+
+  const renderImages = (images) => {
+    if (!images || images.length === 0) return null
+    return (
+      <div className={`mt-4 grid ${images.length === 1 ? 'grid-cols-1 max-w-md' : 'grid-cols-2'} gap-4`}>
+        {images.map((img, i) => (
+          <div key={i} className="rounded-xl overflow-hidden border border-ink-muted/8 shadow-sm">
+            <img src={img} alt="" className="w-full" />
+          </div>
+        ))}
+      </div>
+    )
+  }
+
   return (
-    <Section id="work" className="bg-slate-50 dark:bg-slate-800/50">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink/60 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ y: 40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 40, opacity: 0 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="bg-white rounded-2xl max-w-3xl w-full max-h-[88vh] overflow-hidden shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="bg-gradient-to-r from-royal to-royal-light px-8 py-6 flex items-center justify-between">
+          <div>
+            <p className="text-white/60 text-xs tracking-widest uppercase mb-1">Project Detail</p>
+            <h3 className="text-2xl font-bold text-white tracking-tight">{project.title}</h3>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div className="overflow-y-auto max-h-[calc(88vh-88px)] p-8 space-y-8">
+          {project.sections.map((section, idx) => (
+            <div key={idx}>
+              {hasTypedSections ? (
+                <div>
+                  <div className="mb-3">{getLabelBadge(section.type, section.label)}</div>
+                  {section.text && (
+                    <p className="text-[15px] text-ink-light leading-relaxed mb-3">{section.text}</p>
+                  )}
+                  {section.bullets && (
+                    <ul className="space-y-3 mb-3">
+                      {section.bullets.map((bullet, bi) => {
+                        const bulletText = typeof bullet === 'string' ? bullet : bullet.text
+                        const bulletImages = typeof bullet === 'object' ? bullet.images : null
+                        return (
+                          <li key={bi} className="flex items-start gap-2 text-[15px] text-ink-light leading-relaxed">
+                            <span className="text-royal mt-1.5 flex-shrink-0">•</span>
+                            <span>{bulletText}</span>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )}
+                  {renderImages(section.images || (typeof section.bullets?.[0] === 'object' ? null : null))}
+                  {section.bullets && section.bullets.some(b => typeof b === 'object' && b.images) && (
+                    <div className="space-y-4">
+                      {section.bullets.filter(b => typeof b === 'object' && b.images).map((bullet, bi) => (
+                        <div key={bi}>{renderImages(bullet.images)}</div>
+                      ))}
+                    </div>
+                  )}
+                  {section.image && renderImages([section.image])}
+                </div>
+              ) : (
+                <div>
+                  <div className="flex items-start gap-3 mb-4">
+                    <span className="flex items-center justify-center w-7 h-7 rounded-full bg-royal text-white text-xs font-bold flex-shrink-0">
+                      {idx + 1}
+                    </span>
+                    <p className="text-ink font-medium text-[15px] leading-relaxed">{section.text}</p>
+                  </div>
+                  {section.image && renderImages([section.image])}
+                  {section.images && renderImages(section.images)}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function Work({ onProjectClick }) {
+  return (
+    <Section id="work">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">工作经历</h2>
-        <TimelineCard data={workData} isWork />
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">正式工作经历</h2>
+        <div className="space-y-0">
+          {workData.map((item, idx) => (
+            <TimelineCard key={idx} data={item} isWork onProjectClick={onProjectClick} />
+          ))}
+        </div>
       </div>
     </Section>
   )
 }
 
-function Internship() {
+function Internship({ onProjectClick }) {
   return (
     <Section id="internship">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">实习经历</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">实习经历</h2>
+        <div className="space-y-0">
           {internshipData.map((item, idx) => (
-            <div key={idx} className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-1">{item.company}</h3>
-              <p className="text-slate-600 dark:text-slate-300 mb-1">{item.title}</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{item.period}</p>
-              <ul className="space-y-2">
-                {item.achievements.map((ach, i) => (
-                  <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    {ach}
-                  </li>
-                ))}
-              </ul>
+            <div key={idx} className="relative pl-8 border-l-2 border-ink-muted/20">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-royal-light rounded-full" />
+              <div className="bg-white rounded-lg p-6 mb-6 border border-ink-muted/10">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="text-lg font-semibold text-ink">{item.company}</h3>
+                  {item.projectId && (
+                    <button
+                      onClick={() => onProjectClick && onProjectClick(item.projectId)}
+                      className="group inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-royal text-sm font-semibold hover:bg-royal-pale transition-all duration-200"
+                    >
+                      <span>查看详情</span>
+                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <p className="text-ink-light">{item.title}</p>
+                  <span className="text-ink-muted/40">|</span>
+                  <p className="text-sm text-ink-muted">{item.period}</p>
+                </div>
+                <ul className="space-y-3">
+                  {item.achievements.map((ach, i) => (
+                    <li key={i} className="text-sm text-ink-light flex items-start">
+                      <span className="text-royal mr-2 mt-0.5">•</span>
+                      <span>
+                        <span className="font-semibold text-ink">{ach.title}</span>
+                        <span className="ml-1">— {ach.desc}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -504,37 +821,37 @@ function Internship() {
   )
 }
 
-function Research() {
+function Research({ onProjectClick }) {
   return (
-    <Section id="research" className="bg-slate-50 dark:bg-slate-800/50">
+    <Section id="research">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">科研项目</h2>
-        <div className="space-y-8">
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">科研项目</h2>
+        <div className="space-y-0">
           {researchData.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm"
-            >
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h3 className="text-lg font-semibold text-slate-800 dark:text-white">{item.title}</h3>
-                <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded">
-                  {item.role}
-                </span>
+            <div key={idx} className="relative pl-8 border-l-2 border-ink-muted/20">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-royal-light rounded-full" />
+              <div className="bg-white rounded-lg p-6 mb-6 border border-ink-muted/10">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
+                  <span className="px-2 py-1 bg-royal-pale text-royal-dark text-xs rounded">
+                    {item.role}
+                  </span>
+                  {item.projectId && (
+                    <button
+                      onClick={() => onProjectClick && onProjectClick(item.projectId)}
+                      className="group inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-royal text-sm font-semibold hover:bg-royal-pale transition-all duration-200"
+                    >
+                      <span>查看详情</span>
+                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+                <p className="text-sm text-ink-muted mb-1">{item.period}</p>
+                <p className="text-sm text-ink-light">{item.description}</p>
               </div>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">{item.period}</p>
-              <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">{item.description}</p>
-              <ul className="space-y-2">
-                {item.achievements.map((ach, i) => (
-                  <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start">
-                    <span className="text-blue-500 mr-2">▸</span>
-                    {ach}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -546,18 +863,30 @@ function Skills() {
   return (
     <Section id="skills">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">专业技能</h2>
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">专业技能</h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">语言能力</h3>
-            {skillsData.language.map((item, idx) => (
-              <SkillBar key={idx} name={item.name} level={item.level} />
-            ))}
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl p-6 border border-ink-muted/10 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex items-center gap-2 mb-5">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-royal/10 text-royal">
+                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
+              </span>
+              <h3 className="text-lg font-semibold text-ink">语言能力</h3>
+            </div>
+            <div className="space-y-3">
+              {skillsData.language.map((item, idx) => (
+                <LanguageCard key={idx} name={item.name} level={item.level} icon={item.icon} />
+              ))}
+            </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">数据工具</h3>
+          <div className="bg-white rounded-2xl p-6 border border-ink-muted/10 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex items-center gap-2 mb-5">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-royal/10 text-royal">
+                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              </span>
+              <h3 className="text-lg font-semibold text-ink">数据分析/编程工具</h3>
+            </div>
             <div className="flex flex-wrap">
               {skillsData.dataTools.map((skill, idx) => (
                 <SkillTag key={idx}>{skill}</SkillTag>
@@ -565,8 +894,13 @@ function Skills() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">设计剪辑</h3>
+          <div className="bg-white rounded-2xl p-6 border border-ink-muted/10 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex items-center gap-2 mb-5">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-royal/10 text-royal">
+                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+              </span>
+              <h3 className="text-lg font-semibold text-ink">设计剪辑</h3>
+            </div>
             <div className="flex flex-wrap">
               {skillsData.designTools.map((skill, idx) => (
                 <SkillTag key={idx}>{skill}</SkillTag>
@@ -581,9 +915,9 @@ function Skills() {
 
 function Honors() {
   return (
-    <Section id="honors" className="bg-slate-50 dark:bg-slate-800/50">
+    <Section id="honors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white text-center mb-12">荣誉奖项</h2>
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">荣誉奖项</h2>
         <div className="flex flex-wrap justify-center gap-4">
           {honorsData.map((honor, idx) => (
             <motion.div
@@ -591,7 +925,7 @@ function Honors() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.1 }}
-              className="px-6 py-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm text-slate-700 dark:text-slate-300"
+              className="px-6 py-4 bg-white rounded-lg shadow-sm text-ink-light border border-ink-muted/10"
             >
               <span className="text-xl mr-2">🏆</span>
               {honor}
@@ -615,35 +949,45 @@ function Contact() {
   return (
     <Section id="contact">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-12">联系我</h2>
+        <h2 className="text-3xl font-bold text-ink mb-12">联系我</h2>
         
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-sm">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+        <div className="bg-white rounded-2xl p-8 border border-ink-muted/10 shadow-sm">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
             <button
               onClick={() => copyToClipboard(personalInfo.phone, 'phone')}
-              className="flex items-center gap-3 px-6 py-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              className="flex items-center gap-3 px-6 py-4 bg-white rounded-xl border border-ink-muted/15 hover:border-royal/30 hover:shadow-md transition-all duration-200 w-full md:w-auto"
             >
-              <span className="text-2xl">📱</span>
-              <span className="text-slate-700 dark:text-slate-300">{personalInfo.phone}</span>
-              {copied === 'phone' && <span className="text-green-500 text-sm">✓ 已复制</span>}
+              <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-royal/10 text-royal flex-shrink-0">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              </span>
+              <div className="text-left">
+                <p className="text-xs text-ink-muted mb-0.5">电话</p>
+                <p className="text-ink font-medium">{personalInfo.phone}</p>
+              </div>
+              {copied === 'phone' && <span className="text-royal text-sm ml-2">✓</span>}
             </button>
 
             <button
               onClick={() => copyToClipboard(personalInfo.email, 'email')}
-              className="flex items-center gap-3 px-6 py-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              className="flex items-center gap-3 px-6 py-4 bg-white rounded-xl border border-ink-muted/15 hover:border-royal/30 hover:shadow-md transition-all duration-200 w-full md:w-auto"
             >
-              <span className="text-2xl">✉️</span>
-              <span className="text-slate-700 dark:text-slate-300">{personalInfo.email}</span>
-              {copied === 'email' && <span className="text-green-500 text-sm">✓ 已复制</span>}
+              <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-royal/10 text-royal flex-shrink-0">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </span>
+              <div className="text-left">
+                <p className="text-xs text-ink-muted mb-0.5">邮箱</p>
+                <p className="text-ink font-medium">{personalInfo.email}</p>
+              </div>
+              {copied === 'email' && <span className="text-royal text-sm ml-2">✓</span>}
             </button>
           </div>
 
-          <p className="text-slate-500 dark:text-slate-400 text-sm">
-            感谢您查看我的简历，期待与您交流！😊
+          <p className="text-ink-muted text-sm">
+            感谢您查看我的简历，期待与您交流！
           </p>
         </div>
 
-        <p className="mt-12 text-sm text-slate-400 dark:text-slate-500">
+        <p className="mt-12 text-sm text-ink-muted/60">
           © 2025 {personalInfo.name} {personalInfo.nameEn}. All rights reserved.
         </p>
       </div>
@@ -652,28 +996,23 @@ function Contact() {
 }
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
+  const [activeProject, setActiveProject] = useState(null)
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-slate-900' : 'bg-white'}`}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className="min-h-screen bg-ivory">
+      <Navbar />
       <Hero />
       <About />
       <Education />
-      <Work />
-      <Internship />
-      <Research />
+      <Work onProjectClick={setActiveProject} />
+        <Internship onProjectClick={setActiveProject} />
+      <Research onProjectClick={setActiveProject} />
       <Skills />
       <Honors />
       <Contact />
+      {activeProject && (
+        <ProjectModal projectId={activeProject} onClose={() => setActiveProject(null)} />
+      )}
     </div>
   )
 }
