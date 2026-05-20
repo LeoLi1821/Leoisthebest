@@ -103,22 +103,37 @@ const projectDetails = {
   'ai-platform': {
     title: '小鹿听你说平台AI优化项目',
     sections: [
-      { text: 'AI前端收集建议', image: '/Leoisthebest/ai-frontend.jpg' },
-      { text: 'AI中台分类', image: '/Leoisthebest/ai-middleware.jpg' },
-      { text: 'AI自动建议流转', image: '/Leoisthebest/ai-auto-flow.png' }
+      { label: '背景', text: '全权负责瑞幸咖啡员工反馈平台"小鹿听你说"全周期运营，面对3400条用户建议人工处理效率低、流转链路长的问题', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '搭建AI前端建议收集入口，实现用户反馈结构化采集',
+        '部署AI中台智能分类系统，自动识别建议类型与优先级',
+        '落地AI自动建议流转，打通OA线上审批与任务分派链路'
+      ]},
+      { label: '工作成果', text: '完成3400条用户建议闭环处理，落地AI智能分类与OA线上流转，大幅提升跨部门协同效率', type: 'result', images: ['/Leoisthebest/ai-frontend.jpg', '/Leoisthebest/ai-middleware.jpg', '/Leoisthebest/ai-auto-flow.png'] }
     ]
   },
   'data-model': {
     title: '全国HRBP数据模型搭建',
     sections: [
-      { text: '基于全国HR常用的数据维度，梳理对应数据指标', image: '/Leoisthebest/data-metrics.png' },
-      { text: '归纳数据指标模型，进行需求提报与初步报告应用', image: '/Leoisthebest/data-application.png' }
+      { label: '背景', text: '全国HRBP缺乏统一的数据指标体系，经营数据分散、分析维度不一，难以支撑高效决策', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '基于全国HR常用数据维度，系统梳理68个经营核心指标',
+        '独立搭建2套核心业务数据模型，归纳指标逻辑与关联关系',
+        '设计自动化表单与数据仪表盘，实现数据标准化可视化呈现'
+      ]},
+      { label: '工作成果', text: '建立全国HRBP数据标准化体系，68个核心指标可视化呈现，数据模型支撑全国HRBP业务洞察与决策', type: 'result', images: ['/Leoisthebest/data-metrics.png', '/Leoisthebest/data-application.png'] }
     ]
   },
   'cross-dept': {
     title: '跨部门项目落地',
     sections: [
-      { text: '承接人才储备、门店管理能力升级等重点项目', images: ['/Leoisthebest/cross-dept1.png', '/Leoisthebest/cross-dept2.png'] }
+      { label: '背景', text: '承接人才储备、门店管理能力升级等跨部门重点项目，需统筹多方资源推动项目落地交付', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '统筹人才储备项目，协调各部门资源推进关键节点',
+        '推动门店管理能力升级，设计并组织4场线上培训',
+        '建立项目跟踪机制，确保各环节按时交付'
+      ]},
+      { label: '工作成果', text: '项目交付率100%，4场线上培训全员覆盖，跨部门协作流程标准化', type: 'result', images: ['/Leoisthebest/cross-dept1.png', '/Leoisthebest/cross-dept2.png'] }
     ]
   },
   'intern-elsevier': {
