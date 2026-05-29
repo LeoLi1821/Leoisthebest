@@ -218,6 +218,45 @@ const projectDetails = {
       ]},
       { label: '工作成果', text: '课题成果提交至教育部相关研究机构参考', type: 'result', images: ['/Leoisthebest/高校分类-配图.png', '/Leoisthebest/高校分类-配图1.png'] }
     ]
+  },
+  'typeflow-engine': {
+    title: 'AI智能排版引擎',
+    sections: [
+      { label: '背景', text: '微信公众号排版耗时耗力，现有工具模板化严重、设计感不足，运营者需要反复手动调整样式，效率低下', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '设计专业级System Prompt，定义10种排版风格（简约商务/文艺清新/科技未来/中式国风等），覆盖主流公众号视觉需求',
+        '对接DeepSeek、GPT-4o、通义千问等多模型，支持流式输出实时预览生成过程',
+        '实现风格参考图解析，AI自动提取参考图配色与布局特征并还原',
+        '设计长图文模式，从封面到结尾形成连贯视觉流，像一张精心设计的长海报'
+      ]},
+      { label: '工作成果', text: 'AI一键生成高设计感排版，10种预设风格+自定义风格描述，生成效果远超传统模板工具', type: 'result', images: ['/Leoisthebest/typeflow-step3.png', '/Leoisthebest/typeflow-step4.png'] }
+    ]
+  },
+  'typeflow-dual-mode': {
+    title: '双模式编辑系统',
+    sections: [
+      { label: '背景', text: '不同用户对排版控制粒度需求不同：部分用户希望AI全自动生成，部分用户希望精细控制每个组件的样式', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '设计AI长图文模式：输入内容+风格描述，AI流式生成完整排版，支持中途停止与重新生成',
+        '设计手动组件模式：将内容拆分为标题/正文/分割线/图片/引导5类组件，用户可逐个选择样式',
+        '实现长图文→组件化自动转换，AI将长图文HTML拆解为独立可编辑组件',
+        '开发8种主题色系（简约/商务/中国风/文艺/可爱/科技/清新/复古），组件样式随主题联动'
+      ]},
+      { label: '工作成果', text: '双模式满足不同场景需求，AI模式一键出图，组件模式精细打磨，两种模式可自由切换', type: 'result', images: ['/Leoisthebest/typeflow-step1.png', '/Leoisthebest/typeflow-step2.png'] }
+    ]
+  },
+  'typeflow-parser': {
+    title: '多格式解析与微信适配',
+    sections: [
+      { label: '背景', text: '公众号运营者内容来源多样（Markdown/Word/PDF），且微信编辑器对HTML样式有严格限制，需解决格式兼容问题', type: 'bg' },
+      { label: '执行', text: '', type: 'action', bullets: [
+        '开发多格式文件解析器：Markdown直接解析、Word通过mammoth.js提取文本、PDF通过pdfjs-dist逐页提取',
+        '实现智能文本结构识别：自动区分标题/正文/引用/列表，短句识别为标题，长句识别为段落',
+        '开发微信兼容性清洗工具：移除class/id/style标签、过滤position:fixed/sticky、确保所有样式内联',
+        '实现一键复制到剪贴板功能，粘贴到微信编辑器样式完整保留'
+      ]},
+      { label: '工作成果', text: '支持Markdown/Word/PDF三种格式导入，微信编辑器粘贴样式零丢失，端到端排版效率提升10倍+', type: 'result', images: ['/Leoisthebest/typeflow-step0.png', '/Leoisthebest/typeflow-step5.png'] }
+    ]
   }
 }
 
@@ -290,6 +329,21 @@ const researchData = [
   }
 ]
 
+const aiProjectData = [
+  {
+    title: 'TypeFlow — AI公众号自动排版工具',
+    role: '独立开发者',
+    period: '2025.01 - 至今',
+    description: '基于AI大模型的微信公众号智能排版工具，支持Markdown/Word/PDF多格式导入，AI一键生成设计感排版，10种预设风格+自定义风格描述，流式输出实时预览。',
+    projectId: 'ai-typeflow',
+    achievements: [
+      { title: 'AI智能排版引擎', desc: '对接DeepSeek/GPT-4o等大模型，设计专业级System Prompt，实现从内容到高设计感HTML的一键转化', projectId: 'typeflow-engine' },
+      { title: '双模式编辑系统', desc: 'AI长图文模式（流式生成+风格参考图）+ 手动组件模式（标题/正文/分割线/图片/引导5类组件库）', projectId: 'typeflow-dual-mode' },
+      { title: '多格式解析与微信适配', desc: '支持Markdown/Word/PDF文件解析，微信内联样式清洗与兼容性处理，一键复制粘贴到公众号编辑器', projectId: 'typeflow-parser' }
+    ]
+  }
+]
+
 const skillsData = {
   language: [
     { name: '英语四级', level: 554, icon: '📝' },
@@ -314,6 +368,7 @@ const navItems = [
   { id: 'about', label: '关于我' },
   { id: 'education', label: '教育经历' },
   { id: 'work', label: '正式工作经历' },
+  { id: 'ai-project', label: 'AI产品项目' },
   { id: 'internship', label: '实习经历' },
   { id: 'research', label: '科研项目' },
   { id: 'skills', label: '专业技能' },
@@ -787,6 +842,51 @@ function Work({ onProjectClick }) {
   )
 }
 
+function AIProject({ onProjectClick }) {
+  return (
+    <Section id="ai-project">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl font-bold text-ink text-center mb-12">AI产品项目</h2>
+        {aiProjectData.map((project, idx) => (
+          <div key={idx} className="relative pl-8 border-l-2 border-ink-muted/20">
+            <div className="absolute -left-[9px] top-0 w-4 h-4 bg-royal rounded-full" />
+            <div className="bg-white rounded-lg p-6 mb-6 border border-ink-muted/10">
+              <div className="flex flex-wrap items-center gap-3 mb-2">
+                <h3 className="text-xl font-semibold text-ink">{project.title}</h3>
+                <span className="px-2 py-1 bg-royal-pale text-royal-dark text-xs rounded">
+                  {project.role}
+                </span>
+              </div>
+              <p className="text-sm text-ink-muted mb-3">{project.period}</p>
+              <p className="text-sm text-ink-light mb-4">{project.description}</p>
+              <ul className="mt-4 space-y-4">
+                {project.achievements.map((item, i) => (
+                  <li key={i} className="text-sm text-ink-light">
+                    {item.projectId ? (
+                      <button
+                        onClick={() => onProjectClick && onProjectClick(item.projectId)}
+                        className="group inline-flex items-center gap-2 px-3 py-1.5 -ml-3 rounded-lg text-royal font-semibold hover:bg-royal-pale transition-all duration-200"
+                      >
+                        <span>{item.title}</span>
+                        <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </button>
+                    ) : (
+                      <span className="font-semibold text-ink">{item.title}</span>
+                    )}
+                    <span className="ml-1">— {item.desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
 function Internship({ onProjectClick }) {
   return (
     <Section id="internship">
@@ -1020,6 +1120,7 @@ function App() {
       <About />
       <Education />
       <Work onProjectClick={setActiveProject} />
+      <AIProject onProjectClick={setActiveProject} />
         <Internship onProjectClick={setActiveProject} />
       <Research onProjectClick={setActiveProject} />
       <Skills />
