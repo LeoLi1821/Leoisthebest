@@ -334,7 +334,8 @@ const aiProjectData = [
     title: 'TypeFlow — AI公众号自动排版工具',
     role: '独立开发者',
     period: '2026.05',
-    description: '基于AI大模型的微信公众号智能排版工具，支持Markdown/Word/PDF多格式导入，AI一键生成设计感排版，10种预设风格+自定义风格描述，流式输出实时预览。',
+    url: 'https://wechat-editor-dusky.vercel.app',
+    description: '基于AI大模型的微信公众号智能排版工具，支持Markdown/Word/PDF多格式导入，AI一键生成设计感排版，10种预设风格+自定义风格描述，流式输出实时预览',
     projectId: 'ai-typeflow',
     achievements: [
       { title: 'AI智能排版引擎', desc: '对接DeepSeek/GPT-4o等大模型，设计专业级System Prompt，实现从内容到高设计感HTML的一键转化', projectId: 'typeflow-engine' },
@@ -858,6 +859,12 @@ function AIProject({ onProjectClick }) {
                 </span>
               </div>
               <p className="text-sm text-ink-muted mb-3">{project.period}</p>
+              {project.url && (
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-royal hover:text-royal-dark mb-3 hover:underline">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  {project.url}
+                </a>
+              )}
               <p className="text-sm text-ink-light mb-4">{project.description}</p>
               <ul className="mt-4 space-y-4">
                 {project.achievements.map((item, i) => (
