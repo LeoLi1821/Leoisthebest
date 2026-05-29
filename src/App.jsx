@@ -333,7 +333,7 @@ const aiProjectData = [
   {
     title: 'TypeFlow — AI公众号自动排版工具',
     role: '独立开发者',
-    period: '2025.01 - 至今',
+    period: '2026.05',
     description: '基于AI大模型的微信公众号智能排版工具，支持Markdown/Word/PDF多格式导入，AI一键生成设计感排版，10种预设风格+自定义风格描述，流式输出实时预览。',
     projectId: 'ai-typeflow',
     achievements: [
